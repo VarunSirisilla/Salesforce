@@ -1,0 +1,57 @@
+<apex:page sidebar="false" standardStylesheets="false" showHeader="false" controller="PatientObjectController">
+        <style>
+     div.ex1 {
+  width:1300px;
+     height:80px;
+  margin: auto;
+  border: 3px solid #73AD21;
+  color: Skyblue;
+ background-color:white;
+      font-size: 50px;
+      font-family: "Times New Roman", Times, serif;
+     font-weight:    bold;
+     text-align:center
+}
+   div.div1 {
+  width:400px;
+        
+     height:20px;
+          padding-top: 50px;
+  padding-right: 50px;
+  padding-bottom: 280px;
+  padding-left: 0px;
+  margin: 20px;
+  border: 0px solid #73AD21;
+  color: Red;
+ background-color: SkyBlue;
+      font-size: 15px;
+      font-family: "Times New Roman", Times, serif;
+     font-weight:    bold;
+     
+}
+        
+body {background-color: yellow;}
+
+        
+
+</style>
+    <div class="ex1">CraftShip Hospitals</div>
+    <br/>
+    <div class="div1">
+    <apex:form >
+        
+   Patient Id:<apex:outputfield value="{!mypatientObject.Name}"/><br/><br/>
+  Patient Name:<apex:inputField value="{!mypatientObject.Name}"/><br/><br/>
+    Gender:<apex:inputField value="{!mypatientObject.Gender__c}"/><br/><br/>
+   Disease:<apex:inputField value="{!mypatientObject.Disease__c}"/><br/><br/>
+        
+        Age:<apex:inputField value="{!mypatientObject.Age__c}"/><br/><br/>
+        Phone:<apex:inputField value="{!mypatientObject.Phone__c}"/><br/><br/>
+        Doctor:<apex:inputField required="true" value="{!mypatientObject.Doctor__c}"/><br/><br/>
+    <apex:commandButton value="Save" action="{!Save}"/>
+    </apex:form>
+        </div>
+   
+    <br/>
+  
+</apex:page>

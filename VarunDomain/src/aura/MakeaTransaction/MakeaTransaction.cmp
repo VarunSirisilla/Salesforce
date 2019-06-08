@@ -1,0 +1,42 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="PatientListPraciseController" >
+    <aura:attribute name="TransactionList" type="Transaction__c[]"/>
+    <aura:attribute name="newRecord" type="Transaction__c"
+                default="{'sobjectType' : 'Transaction__c' }"/>
+    <aura:attribute name="vMakeTransaction" type="Transaction__c" default="{sobjectName : 'Transaction__c',
+                                                                     Account_Number__c : '',
+                                                                     	Credit_Amount__c :'',
+                                                                     Debit_Amount__c : '',
+                                                                     Person_Name__c : '',
+                                                                     PIN_NO__c : '',
+                                                                     Remaining_Balance__c : '',
+                                                                     Transaction_type__c : ''}"/>
+    <lightning:card footer="Transaction" title="Transactions" iconName="action:new_person_account">
+        <aura:set attribute="actions">
+            <b><lightning:button label="Welcome to CRAFTSHIP BANK OF INDIA" variant="Success"/></b>
+        </aura:set>
+        <div class="slds-p-bottom_large slds-p-left_large" style="width:500px">
+            <lightning:recordEditForm aura:id="recordViewForm"
+                                      
+                                      objectApiName="Transaction__c">
+                <b>
+                <lightning:messages />
+                <lightning:outputField fieldName="Person_Name__c" />
+                    <lightning:outputField fieldName="Remaining_Balance__c" />
+                    
+                <lightning:inputField fieldName="Name" value="{!v.vcreatePatient.Name}" />                    
+                <lightning:inputField fieldName="Gender__c" value="{!v.vcreatePatient.Gender__c}" />
+                <lightning:inputField fieldName="Phone__c" value="{!v.vcreatePatient.Phone__c}"/>
+                <lightning:inputField fieldName="Disease__c" value="{!v.vcreatePatient.Disease__c}"/>
+                <lightning:inputField fieldName="Doctor__c" value="{!v.vcreatePatient.Doctor__c}" required="true"/>
+                
+                <lightning:inputField fieldName="Hospital_Visit_Date__c" value="{!v.vcreatePatient.Hospital_Visit_Date__c}"/>
+                <lightning:inputField fieldName="Age__c" value="{!v.vcreatePatient.Age__c}"/>
+                <br/>
+                    </b>
+                
+                <lightning:button aura:id="submit" variant="Brand" type="submit" label="Create" class="slds-m-top_medium" onclick="{!c.createcontact}" />
+            </lightning:recordEditForm>
+        </div>
+    </lightning:card>
+    
+</aura:component>

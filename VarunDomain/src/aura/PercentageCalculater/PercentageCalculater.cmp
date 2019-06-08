@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,lightning:isUrlAddressable,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:hassobjectname,force:lightningQuickAction" access="global" controller="PatientListPraciseController" >
+    <aura:attribute name="PatientList" type="Patient__c[]"/>
+    <lightning:overlayLibrary aura:id="overLayLib"/>
+        <aura:attribute name="Patientrecordid" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}"/>
+    
+    
+    
+   
+    
+    
+          
+    
+    
+    
+    
+    
+</aura:component>

@@ -1,0 +1,19 @@
+<apex:page controller="DisplayallDoctorDetails">
+    <apex:pageBlock title="Doctors">
+    <apex:pageBlockTable value="{!Doctorlist}" var="i">
+        <apex:column value="{!i.Name}"/>
+        <apex:column value="{!i.Patient_count__c}"/>    
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    <apex:pageBlock title="patients">
+    <apex:pageBlockTable value="{!Patientlist}" var="i">
+            <apex:column value="{!i.Name}"/>
+            <apex:column value="{!i.Gender__c}"/>
+            <apex.column value="{!i.Disease__c}"/>
+            <apex:column value="{!i.Age__c}"/>
+            <apex:column value="{!i.Phone__c}"/>
+             <apex:column value="{!i.Doctor__c}"/>  
+        </apex:pageBlockTable>
+        
+    </apex:pageBlock>
+</apex:page>

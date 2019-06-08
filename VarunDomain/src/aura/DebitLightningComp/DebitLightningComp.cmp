@@ -1,0 +1,87 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="PatientListPraciseController">
+    <aura:attribute name="AccountNumber" type="String"/>
+    <aura:attribute name="TList" type="Customer__c"/>
+    <aura:attribute name="RList" type="Customer__c"/>
+ <aura:attribute name="isModalOpen" type="boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>       
+    <aura:attribute name="CreditAmount" type="Transaction__c" default="{sobjectName : 'Transaction__c',
+                                                                       Name__c	 :' ',
+                                                                       Transaction_type__c : 'Debit',
+                                                                       Debit_Amount__c :'',
+                                                                       PIN_NO__c : '',
+                                                                       
+                                                                       }"/>
+    {!v.CreditAmount.Name__c}
+    
+    <br></br>
+    <div class="ex3"> 
+        <b>Welcome to CRAFTSHIP BANK OF INDIA</b>
+    </div><br/>
+    <div class="">
+        <lightning:card variant="narrow" footer="CRAFTSHIP BANK OF INDIA" title="Make a transaction quicker" iconName="action:new_person_account" class="ex4">
+            <aura:set attribute="actions">
+                <b><lightning:button label="Get a lifetime insurance" variant="Brand"/></b>
+                
+                
+            </aura:set>
+            <div class="slds-p-bottom_large slds-p-left_large" style="width:500px">
+                <div class="slds-col slds-order_1">
+                    <lightning:recordEditForm aura:id="recordViewForm"
+                                              
+                                              objectApiName="Transaction__c">
+                        <b>
+                            <lightning:messages />
+                            
+                            <lightning:input name="Account Number" disabled="true" label="Account Number" value="{!v.AccountNumber}" />  
+                            <lightning:inputField fieldName="Person_Name__c" value="{!v.TList.Person_Name__c}"  />                 
+                            <lightning:inputField fieldName="Transaction_type__c" disabled="true" value="{!v.CreditAmount.Transaction_type__c}" />
+                            <lightning:inputField fieldName="Debit_Amount__c" value="{!v.CreditAmount.Debit_Amount__c}"/>
+                            <lightning:inputField fieldName="PIN_NO__c" value="{!v.CreditAmount.PIN_NO__c}"/>
+                            
+                            
+                            
+                            <br/>
+                        </b>
+                        
+                        <lightning:button  variant="Brand" label="Debit" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" />
+                        
+                    </lightning:recordEditForm>
+                </div>
+            </div>
+        </lightning:card>
+         <aura:if isTrue="{!v.isModalOpen}">
+             
+            <!-- Modal/Popup Box starts here-->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close"
+                                              onclick="{! c.closeModel }"
+                                              alternativeText="close"
+                                              variant="bare-inverse"
+                                              class="slds-modal__close"/>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Amount Debited Successfully</h2>
+                    </header>
+                    <!--Modal/Popup Box Body Starts here-->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <p><b>{!v.RList.Person_Name__c}, Your Account {!v.RList.Name} is Debited with {!v.CreditAmount.Debit_Amount__c}<br/>
+                            Your Balance : ₹ {!v.RList.Initial_Balance__c}. 
+                            </b>
+                        </p>
+                    </div>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="brand"
+                                          label="OK"
+                                          title="OK"
+                                          onclick="{!c.submitDetails}"/>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+        
+        <br />
+    </div>
+</aura:component>

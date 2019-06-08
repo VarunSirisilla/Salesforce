@@ -1,0 +1,104 @@
+<apex:page showHeader="false" sidebar="false" controller="BillObjectcontroller" >
+    
+   <style>
+         .button2 {
+         width: 15em;  
+         height: 3em;
+  background-color: Skyblue;
+  border: none;
+  color: white;
+  padding: 20px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 5px 15px;
+  cursor: pointer;
+}
+     div.ex1 {
+  width:1300px;
+     height:0px8;
+         margin: 150px 15px;
+  margin: auto;
+  border: 1px solid #73AD21;
+  color: Skyblue;
+ background-color:white;
+      font-size: 50px;
+      font-family: "Times New Roman", Times, serif;
+     font-weight:    bold;
+     text-align:center
+}
+          div.ex2 {
+  width:400px;
+        
+     height:20px;
+          padding-top: 50px;
+  padding-right: 50px;
+  padding-bottom: 280px;
+  padding-left: 0px;
+  margin: 20px;
+  border: 0px solid #73AD21;
+  color: Red;
+ background-color:powderblue;
+      font-size: 15px;
+      font-family: "Times New Roman", Times, serif;
+     font-weight:    bold;
+     
+}
+        div.ex3 {
+  width:400px;
+        
+     height:10px;
+          padding-top: 50px;
+  padding-right: 150px;
+  padding-bottom: 280px;
+  padding-left: 0px;
+  margin: -360px 20px 100px 550px;
+  border: 0px solid #73AD21;
+  color: Red;
+ background-color:powderblue;
+      font-size: 15px;
+      font-family: "Times New Roman", Times, serif;
+     font-weight:    bold;
+     text-align:center;
+}
+         
+body {background-color: powderblue;}
+
+
+        
+
+</style>
+    <div class="ex1">CraftShip Hospitals</div>
+<marquee>Welcome to CRAFTSHIP HOSPITALS</marquee>
+<br></br>
+
+<div class="ex2">
+<apex:form >
+   Patient  :  <apex:inputField value="{!myBillobject.Patient__c}"/><br/><br/>
+    Email id  : <apex:inputField value="{!myBillobject.Email_id__c}"/><br/><br/><br/>
+    Lab Bill  : <apex:inputField value="{!myBillobject.Lab_Bill__c}"/><br/><br/><br/>
+    Doctor Bill  : <apex:inputField value="{!myBillobject.DoctorBill__c}"/><br/><br/><br/>
+ </apex:form>
+<br />
+</div>
+<div class="ex3">
+    <apex:form >
+   Bill Paid:   <apex:inputField value="{!myBillobject.Bill_Paid__c}"/><br/><br/>
+    Discount: <apex:inputField value="{!myBillobject.Discount__c}"/><br/><br/><br/>
+    
+        <apex:commandButton value="Save" action="{!save}"/>
+    </apex:form>
+</div>
+    <apex:pageBlock >
+<apex:pageBlockTable value="{!UpdatedRecords}" var="i">
+    <apex:column value="{!i.Patient__c}"/>
+    <apex:column value="{!i.Email_id__c}"/>
+    <apex:column value="{!i.Lab_Bill__c}"/>
+    <apex:column value="{!i.DoctorBill__c}"/>
+    <apex:column value="{!i.Discount__c}"/>
+    
+    <apex:column value="{!i.Bill_Paid__c}"/>    
+        </apex:pageBlockTable>
+</apex:pageBlock>
+</apex:page>

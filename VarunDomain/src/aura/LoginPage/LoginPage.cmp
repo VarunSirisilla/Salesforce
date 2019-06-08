@@ -1,0 +1,25 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="PatientListPraciseController"  >
+    <aura:attribute name="UserName" type="String"/>
+    <aura:attribute name="Password" type="String"/>
+    <aura:attribute name="Result" type="String"/>
+      
+    {!v.Result}
+    <br></br>
+    <div class="ex3"> 
+        <b>Welcome to CRAFTSHIP BANK OF INDIA</b>
+    </div><br/>
+    
+    <div class="ex2">
+        <p>
+       <br/>
+            <b>
+            <lightning:input class="slds-p-around_x-small" name="Username" label="Username" value="{!v.UserName}"/>
+            <lightning:input type="password" class="slds-p-around_x-small" name="Password" label="Password" value="{!v.Password}"/><br/>
+            </b>
+            <lightning:button label="Submit" variant="Success" onclick="{!c.Success}"/>
+        </p>
+        <br/>
+        
+        <br />
+    </div>
+</aura:component>

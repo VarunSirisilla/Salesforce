@@ -1,0 +1,46 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+ 
+    <lightning:buttonGroup class="button">
+    <lightning:button  variant="destructive" label="Patients" title="Patients" onclick="{!c.NavigatePatientrecords }"/>
+        <lightning:button variant="destructive" label="Doctors" title="Doctors" onclick="{! c.NavigateDoctorrecords }"/>
+        <lightning:button variant="destructive" label="Bills" title="Bills" onclick="{! c.handleClick }"/>
+        <lightning:button variant="destructive" label="Operations" title="Operations" onclick="{! c.handleClick }"/>
+        <lightning:button variant="destructive" label="Labs" title="Labs" onclick="{! c.handleClick }"/>
+</lightning:buttonGroup>
+    <br></br>
+    <div class="ex3"> 
+     <lightning:carousel disableAutoRefresh="false" disableAutoScroll="False" >
+        <lightning:carouselImage
+            src = "https://i.ibb.co/w69Yxv6/Craftshphospital-green.jpg"
+           header="Welcome to Craftship Hospitals"
+            description = ""
+            alternativeText = ""
+            href = "https://www.salesforce.com">
+        </lightning:carouselImage>
+        <lightning:carouselImage
+            src = "https://i.ibb.co/w69Yxv6/Craftshphospital-green.jpg"
+            
+            description = ""
+            alternativeText = ""
+            href = "https://www.salesforce.com">
+        </lightning:carouselImage>
+        <lightning:carouselImage
+            src = "https://i.ibb.co/w69Yxv6/Craftshphospital-green.jpg"
+         
+            description = ""
+            alternativeText = ""
+            href = "https://www.salesforce.com">
+        </lightning:carouselImage>
+    </lightning:carousel>
+    </div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <div class="ex2">
+         	
+        <br/>
+<a href="https://imgbb.com/">
+<img src="https://i.ibb.co/w69Yxv6/Craftshphospital-green.jpg" alt="Craftshphospital-green" border="0"/>
+</a>
+<br />
+</div>
+    
+    
+</aura:component>

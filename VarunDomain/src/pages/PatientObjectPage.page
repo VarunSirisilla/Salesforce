@@ -1,0 +1,19 @@
+<apex:page contentType="PatientObjectController" showHeader="false" sidebar="false">
+<style>
+div.ex1 {
+  width:1300px;
+     height:80px;
+  margin: auto;
+  border: 3px solid #73AD21;
+  color: Skyblue;
+ background-color:white;
+      font-size: 50px;
+      font-family: "Times New Roman", Times, serif;
+     font-weight:    bold;
+     text-align:center
+}
+         
+body {background-color: skyblue;}
+</style>
+    
+</apex:page>

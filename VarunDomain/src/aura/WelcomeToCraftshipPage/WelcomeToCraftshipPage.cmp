@@ -1,0 +1,19 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<lightning:buttonGroup class="button">
+    <lightning:button  variant="destructive" label="Create Account" title="Patients" onclick="{!c.NavigatePatientrecords }"/>
+        
+        <lightning:button variant="destructive" label="Transaction" title="Bills" onclick="{! c.Transactions }"/>
+        <lightning:button variant="destructive" label="Transfer Amount" title="Operations" onclick="{! c.handleClick }"/>
+        <lightning:button variant="destructive" label="Help" title="Labs" onclick="{! c.handleClick }"/>
+</lightning:buttonGroup>
+    <br></br>
+    <div class="ex3"> 
+
+    </div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <div class="ex2">
+         	
+        <br/>
+
+<br />
+</div>
+</aura:component>

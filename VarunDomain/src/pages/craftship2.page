@@ -1,0 +1,8 @@
+<apex:page showHeader="true" sidebar="true" >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1 style="font-size:100px;">Craftship hospitals</h1><br></br>
+<body bgcolor = 'green'>
+hi
+</body>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

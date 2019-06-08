@@ -1,0 +1,6 @@
+<apex:page controller="Mycontroller" >
+   <body bgcolor="blue">
+<h1 style="font-size:100px;">Welcome {!mystring} Craftship hospitals</h1>
+
+</body>
+</apex:page>

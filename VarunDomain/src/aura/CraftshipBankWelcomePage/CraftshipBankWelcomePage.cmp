@@ -1,0 +1,20 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <h1>Hi</h1>
+    
+    <br></br>
+    <div class="ex3"> 
+        <b>Welcome to CRAFTSHIP BANK OF INDIA</b>
+        
+    </div><br/>
+    <div class="ex2">
+        <p>
+       <br/><br/><br/>
+            <lightning:button class="slds-col slds-size_1-of-3" variant="brand" label="Log in" onclick="{!c.Login}" /><br/>
+<lightning:button class="slds-col slds-size_1-of-3" variant="brand" label="Sign in" onclick="{! c.handleClick }" />
+        </p>
+        <br/>
+        
+        <br />
+    </div>
+</aura:component>

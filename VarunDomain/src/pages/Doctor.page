@@ -1,0 +1,26 @@
+<apex:page showHeader="false" sidebar="false" controller="ShowingDoctor" >
+    
+  <h1>
+      <br/>
+     <B> Below are the doctor details</B>
+      <br/>
+    </h1>
+    Doctor name = {!mydoctorname.Name}<br/>
+    Department = {!mydoctorname.Department__c}<br/>
+    <h1>
+      <br/>
+     <B> Below are the Patient details</B>
+      <br/>
+    </h1>
+    Patient name = {!mypatientdetails.Name}<br/>
+    Department = {!mypatientdetails.Gender__c}
+     <h1>
+      <br/>
+         <br/>
+     <B> Below are the Lab details</B>
+      <br/>
+    </h1>
+    Lab name = {!mylabdetails.Name}<br/>
+    Lab Bill = {!mylabdetails.LabBill__c}
+   
+</apex:page>

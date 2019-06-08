@@ -1,0 +1,37 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="recordFields" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}"/>
+    <!--LDS for Createrecord-->
+    <force:recordData aura:id="Doctorrecordcreator"
+                      layoutType="FULL"
+                      mode="VIEW"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.recordFields}"
+                      targetError="{!v.recordError}"/>
+    <div>
+           <lightning:card footer="Patients" title="Patients" iconName="action:new_person_account">
+        <aura:set attribute="actions">
+            <b><lightning:button label="Welcome to Craftship Hospitals" variant="Success"/></b>
+                        <b><lightning:button label="ThankYou" variant="Brand"/></b>
+            
+        </aura:set>
+        <div class="slds-p-bottom_large slds-p-left_large" style="width:500px">
+             <lightning:recordEditForm aura:id="recordViewForm"
+                                      
+                                      objectApiName="Doctor__c">
+                <b>
+                <lightning:messages />
+                <lightning:input required="true" value="{!v.recordFields.Name}" label="Doctors Name"/>
+            <br/><lightning:inputField fieldName="Department__c" value="{!v.recordFields.Department__c}" /> 
+            <br/>
+                 </b>
+        <lightning:button label="Save" value="Save" onclick="{!c.Onsave}" variant="brand"/> 
+      </lightning:recordEditForm>
+               </div>
+                 </lightning:card>
+
+                 
+    </div>
+</aura:component>

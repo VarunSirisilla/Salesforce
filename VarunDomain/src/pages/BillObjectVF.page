@@ -1,0 +1,60 @@
+<apex:page showHeader="false" sidebar="false" controller="BillObjectcontroller">
+     <style>
+        .h1
+
+{
+
+    display: block;font-size: 3.2em;
+
+    font-weight: bold;
+
+}
+
+.rules_form2 * {
+
+   background-color:skyblue;
+
+           color: Black;
+
+       
+
+    font-size:14px;
+}
+     div.ex1 {
+  width:1300px;
+     height:80px;
+  margin: auto;
+  border: 3px solid #73AD21;
+  color: Skyblue;
+ background-color:white;
+      font-size: 50px;
+      font-family: "Times New Roman", Times, serif;
+     font-weight:    bold;
+     text-align:center
+}
+         
+body {background-color: skyblue;}
+
+        
+
+</style>
+    <div class="ex1">CraftShip Hospitals</div>
+<apex:form >
+    <apex:commandButton value="New Bill" action="{!NewBillInsert}"/>
+    </apex:form>
+           
+<apex:pageBlock title="Bills">
+    <apex:pageBlockTable value="{!mybillrecords}" headerClass="rules_form2" styleclass="rules_form2" var="i">
+       <apex:column value="{!i.Patient__c}"/>
+        <apex:column value="{!i.Email_id__c}"/>
+        <apex:column value="{!i.Lab_Bill__c}"/>
+        <apex:column value="{!i.DoctorBill__c}"/>
+        
+    
+
+    </apex:pageBlockTable>
+    
+    
+    
+    </apex:pageBlock> 
+</apex:page>

@@ -1,0 +1,84 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,lightning:isUrlAddressable,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:hassobjectname,force:lightningQuickAction" access="global" controller="PatientListPraciseController" >
+    <aura:attribute name="CList" type="Customer__c"/>
+    <aura:attribute name="TList" type="Transaction__c[]"/>
+    <aura:attribute name="TransactionList" type="Patient__c[]"/>
+    <aura:attribute name="Showtable" type="String" default="slds-show"/>
+    <aura:attribute name="AccountNumber" type="String"/><br/><br/><br/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  
+    &nbsp;<lightning:button class="slds-col slds-size_1-of-3" variant="brand" label="Get Last transaction" onclick="{!c.GetLasttransaction }" />
+    <lightning:navigation aura:id="navigation"/><br/><br/><br/>
+    <table id="myTable"  class="slds-table slds-table_bordered slds-table_resizable-cols slds-table_fixed-layout slds-table_edit mystles" role="grid" style="width: 76.75rem;">
+                    <thead aria-sort="ascending">
+                        <tr class="slds-line-height_reset">
+                         
+                            <th class="slds-p-around_xx-small" scope="col">
+                                <div class="slds-truncate" title="Person Name">Person Name</div>
+                            </th>
+                            <th class="slds-p-around_xx-small" scope="col">
+                                <div class="slds-truncate" title="Transaction Type">Transaction Type</div>
+                            </th>
+                            <th class="slds-p-around_xx-small" scope="col">
+                                <div class="slds-truncate" title="Credit Amount">Credit Amount</div>
+                            </th>
+                            
+                            <th class="slds-p-around_xx-small" scope="col">
+                                <div class="slds-truncate" title="Debit Amount">Debit Amount</div>
+                            </th>
+                              <th class="slds-p-around_xx-small" scope="col">
+                                <div class="slds-truncate" title="Tranferred Amount">Tranferred Amount</div>
+                            </th>
+                             <th class="slds-p-around_xx-small" scope="col">
+                                <div class="slds-truncate" title="Balance Amount">Balance Amount</div>
+                            </th>
+                           
+                            <th class="slds-p-around_xx-small" scope="col">
+                                <div class="slds-truncate" title="DateandTime">DateandTime</div>
+                            </th>
+                            
+                        </tr>
+                    </thead>
+                    <aura:iteration items="{!v.TList}" var="Doc">
+                        
+                        <tbody>
+                            <tr class="slds-hint-parent">
+                              
+                                <th data-label="DoctorName" aria-sort="ascending" scope="row">
+                                    <div class="slds-truncate" title="Cloudhub">
+                                        <a href="javascript:void(0);" tabindex="-1">{!Doc.Person_Name__c}</a>
+                                    </div>
+                                </th>
+                                <td data-label="Department">
+                                    <div class="slds-truncate" title="Cloudhub">{!Doc.Transaction_type__c}</div>
+                                </td>
+                                <td data-label="Patient count">
+                                    <div class="slds-truncate" title="Cloudhub">{!Doc.Credit_Amount__c}</div>
+                                </td>
+                                <td data-label="RecordID">
+                                    <div class="slds-truncate" title="Cloudhub">{!Doc.Debit_Amount__c}</div>
+                                </td>
+                                <td data-label="RecordID">
+                                    <div class="slds-truncate" title="Cloudhub">{!Doc.Transfer_Amount__c}</div>
+                                </td>
+                               <td data-label="RecordID">
+                                    <div class="slds-truncate" title="Cloudhub">{!Doc.Balance_Amount__c}</div>
+                                </td> 
+                                         <td data-label="RecordID">
+                                    <div class="slds-truncate" title="Cloudhub">{!Doc.CreatedDate}</div>
+                                </td> 
+                                
+                            </tr>
+                            
+                        </tbody>
+                        
+                        
+                    </aura:iteration>
+                </table>
+    
+    
+    
+    
+    
+    
+    
+    
+</aura:component>

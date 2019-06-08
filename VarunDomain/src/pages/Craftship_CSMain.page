@@ -1,0 +1,73 @@
+<apex:page controller="MainPageController" standardStylesheets="false" showHeader="False" sidebar="False">
+     <style>
+         .button2 {
+         width: 15em;  
+         height: 3em;
+  background-color: Skyblue;
+  border: none;
+  color: white;
+  padding: 20px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 5px 15px;
+  cursor: pointer;
+}
+     div.ex1 {
+  width:1300px;
+     height:0px8;
+         margin: 150px 15px;
+  margin: auto;
+  border: 1px solid #73AD21;
+  color: Skyblue;
+ background-color:	maroon;
+      font-size: 50px;
+      font-family: "Times New Roman", Times, serif;
+     font-weight:    bold;
+     text-align:center
+}
+          div.ex2 {
+  width:1300px;
+        
+     height:100px;
+          padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 280px;
+  padding-left: 0px;
+  margin: auto;
+  border: 1px solid #73AD21;
+  color: Skyblue;
+ background-color:powderblue;
+      font-size: 50px;
+      font-family: "Times New Roman", Times, serif;
+     font-weight:    bold;
+     text-align:center
+}
+         
+body {background-color: gold;}
+
+
+        
+
+</style>
+    <div class="ex1">CraftShip Hospitals</div>
+<marquee>Welcome to CRAFTSHIP HOSPITALS</marquee>
+<br></br>
+
+<apex:form style="border-style:solid;border-width:3x;
+                      border-color:white;background-color:orange" >
+<apex:commandButton value="Patients" styleClass="button2"  action="{!PatientObject}"/>
+    <apex:commandButton value="Doctors" styleClass="button2" action="{!DoctorObject}"/>
+    <apex:commandButton value="Labs" styleClass="button2"/>
+    <apex:commandButton value="Operations" styleClass="button2"/>
+    <apex:commandButton value="Bills" styleClass="button2" action="{!BillObject}"/>
+</apex:form>
+
+<div class="ex2">
+<a href="https://imgbb.com/">
+<img src="https://i.ibb.co/w69Yxv6/Craftshphospital-green.jpg" alt="Craftshphospital-green" border="0"/>
+</a>
+<br />
+</div>
+</apex:page>

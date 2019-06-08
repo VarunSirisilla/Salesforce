@@ -1,0 +1,94 @@
+<apex:page controller="PatientObjectController" showHeader="false" sidebar="false" >
+    <style>
+        .h1
+
+{
+
+    display: block;font-size: 3.2em;
+
+    font-weight: bold;
+
+}
+
+.rules_form2 {
+color: Skyblue;
+ background-color:powderblue;
+
+       
+
+    font-size:14px;
+}
+     div.ex1 {
+  width:1300px;
+     height:80px;
+  margin: auto;
+  border: 3px solid #73AD21;
+  color: Skyblue;
+ background-color:white;
+      font-size: 50px;
+      font-family: "Times New Roman", Times, serif;
+     font-weight:    bold;
+     text-align:center
+}
+         
+body {background-color: skyblue;}
+
+        
+
+</style>
+    <div class="ex1">CraftShip Hospitals</div>
+    
+<apex:form >
+<apex:commandButton value="New Patient" action="{!insertpatientpage}" />
+<apex:inputText value="{!mystring}" />
+    <apex:commandButton value="search" action="{!search}" />
+    
+</apex:form>
+  
+     <apex:pageBlock title="Patients" >
+
+    
+<apex:pageBlockSection >
+    <apex:form >
+        
+    <apex:pageBlockTable value="{!myfilterpatient}" var="i" headerClass="rules_form2" styleclass="rules_form2">
+ 
+  
+      
+    <apex:commandLink value="/{!i.Id}">{!i.Name}</apex:commandLink>   
+            
+        <apex:column value="{!i.Gender__c}"/>
+        <apex:column value="{!i.Disease__c}"/>
+        <apex:column value="{!i.Age__c}"/>
+        <apex:column value="{!i.Phone__c}"/>
+        <apex:column value="{!i.Doctor__c}"/>  
+        <apex:column value="{!i.Patient_Id__c}"/>
+        </apex:pageBlockTable>
+    </apex:form>
+    <br/>
+    </apex:pageBlockSection>
+    </apex:pageBlock>
+<apex:pageBlock title="Patients" >
+
+    
+<apex:form >
+    <apex:inlineEditSupport event="ondblclick"/>
+    <apex:pageBlockTable value="{!mypatientTable}" var="i" headerClass="rules_form2" styleclass="rules_form2">
+<apex:column >
+                <apex:facet name="header">Action</apex:facet>
+                <apex:commandButton value="Edit"/>
+            </apex:column>
+      <apex:column > <apex:outputLink value="/{!i.Id}">{!i.Name}</apex:outputLink> </apex:column>
+        <apex:column value="{!i.Gender__c}"/>
+        <apex:column value="{!i.Disease__c}"/>
+        <apex:column value="{!i.Age__c}"/>
+        <apex:column value="{!i.Phone__c}"/>
+        <apex:column value="{!i.Doctor__c}"/>  
+        <apex:column value="{!i.Patient_Id__c}"/>
+        </apex:pageBlockTable>
+    </apex:form>
+    <br/>
+    </apex:pageBlock>
+    
+   
+</apex:page>

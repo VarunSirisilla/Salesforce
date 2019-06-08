@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="CrafstshipLightningController">
+    <aura:handler name="init" action="{!c.getpatientlist}" value="{!this}"/>
+    <aura:attribute name="PatientList" type="list"/>
+    <h1>Welcome</h1>
+    <lightning:card title="Patients" >
+    <p class="slds-p-horizontal_small">
+        <aura:iteration items="{!v.PatientList}" var="Patient">
+        <lightning:recordviewform recordId = "{!Contact.Id}" objectApiName="Contact">
+            <lightning:outputfield fieldname="Name"/>	
+           
+            </lightning:recordviewform>
+    </aura:iteration>
+    
+    </p>
+    
+    
+    </lightning:card>
+</aura:component>

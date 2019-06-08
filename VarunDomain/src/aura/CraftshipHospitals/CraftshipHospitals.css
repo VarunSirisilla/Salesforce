@@ -1,0 +1,26 @@
+.THIS.ex1 {
+  width:1300px;
+     height:680px;
+  margin: auto;
+  border: 3px solid #73AD21;
+  color: skyblue;
+ background-color:orange;
+      font-size: 50px;
+      font-family: "Times New Roman", Times, serif;
+     font-weight:    bold;
+     text-align:center
+} 
+.THIS{
+     background-color:yellow;
+} .THIS.ex2 {
+  width:1300px;
+     height:90px;
+  margin: auto;
+  border: 3px solid #73AD21;
+  color: orange;
+ background-color:skyblue;
+      font-size: 50px;
+      font-family: "Times New Roman", Times, serif;
+     font-weight:    bold;
+     text-align:center
+}

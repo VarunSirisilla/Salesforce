@@ -1,0 +1,27 @@
+<apex:page showheader="false" sidebar="false" Controller="EmployeeButtoncontoller" >
+    <apex:form >
+        
+        <apex:commandButton value="showAll" action="{!showAll}" reRender="mytable"/>
+        <apex:commandButton value="showAP" action="{!showAP}" reRender="mytable1"/>
+        <apex:commandButton value="Exit" action="{!goodbye}"/>
+        
+    </apex:form>
+    <apex:pageBlock title="Display All Employees">
+    
+    <apex:pageBlockTable value="{!AllEmployees}" var="i" id="mytable">
+           <apex:column value="{!i.Emp_name__c}"/>
+            <apex:column value="{!i.Country__c}"/>
+            <apex:column value="{!i.Project__c}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+ <apex:pageBlock title="Display AP Employees">
+      <apex:pageBlockTable value="{!APEmployees}" var="i" id="mytable1">
+           
+            <apex:column value="{!i.Emp_name__c}"/>
+            <apex:column value="{!i.Country__c}"/>
+            <apex:column value="{!i.Project__c}"/>
+        
+            
+            </apex:pageBlockTable>
+       </apex:pageBlock>
+ </apex:page>

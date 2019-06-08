@@ -1,0 +1,13 @@
+<apex:page applyBodyTag="false" docType="html-5.0" standardStylesheets="false" controller="PatientListPraciseController">
+   <apex:includeLightning />
+   <apex:includeScript value="/lightning/lightning.out.js"/>
+   <div id="config"/> 
+   <script>
+   function initLookup() { 
+       $Lightning.use("c:CraftshipBankWelcomePage", function () {
+           $Lightning.createComponent("c:CraftshipBankWelcomePage", {"theme":"{!$User.UIThemeDisplayed}"}, "config", function (cmp) {});
+       });
+   }    
+   initLookup();
+   </script> 
+</apex:page>

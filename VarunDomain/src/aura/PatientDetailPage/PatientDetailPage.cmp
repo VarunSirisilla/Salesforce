@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="Patientrid" type="String" default="	
+a0B0o00001L3IQQEA3"/>
+    <div class="slds-p-around_small">
+    <lightning:recordform
+                          recordId="{!v.Patientrid}"
+                          objectApiName="Patient__c"
+                          layoutType="Full"
+                          mode="View"
+                          columns="2"/>
+        
+    
+    </div>
+</aura:component>

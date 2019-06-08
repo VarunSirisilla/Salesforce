@@ -1,0 +1,63 @@
+<apex:page controller="CraftshipHospitalButtons" showHeader="false" sidebar="false">
+ <style>
+     div.ex1 {
+  width:1300px;
+     height:80px;
+  margin: auto;
+  border: 3px solid #73AD21;
+  color: Skyblue;
+ background-color:white;
+      font-size: 50px;
+      font-family: "Times New Roman", Times, serif;
+     font-weight:    bold;
+     text-align:center
+}
+body {background-color: skyblue;}
+
+        
+
+</style>
+    <div class="ex1">CraftShip Hospitals</div>
+  
+<br></br>
+
+    <apex:form >
+        
+    <apex:commandButton value="Patients" action="{!showpatient}" reRender="Patienttable"/>
+        <apex:commandButton value="Doctors" action="{!showDoctor}" reRender="Doctorstable"/>
+               <apex:commandButton value="Bills" action="{!Billpage}" />
+        <apex:commandButton value="Labs" action="{!Showlabs}" reRender="Labtable"/>
+    </apex:form>
+<apex:pageBlock >
+    <apex:form >
+         <apex:commandButton value="New Patient" action="{!NewPatient}"/>
+         </apex:form>
+        
+    <apex:pageBlockTable title="Patients" value="{!AllPatients}" var="i" id="Patienttable">
+        
+        <apex:column value="{!i.Name}"/>
+        <apex:column value="{!i.Gender__c}"/>
+        <apex:column value="{!i.Disease__c}"/>
+        <apex:column value="{!i.Age__c}"/>
+        <apex:column value="{!i.Phone__c}"/>
+        <apex:column value="{!i.Doctor__c}"/>  
+        </apex:pageBlockTable>
+    <br/>
+    </apex:pageBlock>
+<apex:pageBlock title="Doctors">
+    <apex:pageBlockTable value="{!AllDoctors}" var="i" id="Doctorstable">
+        <apex:column value="{!i.Name}"/>
+        <apex:column value="{!i.Department__c}"/>
+        <apex:column value="{!i.Patient_count__c}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+<apex:pageblock title="Labs">
+<apex:pageBlockTable value="{!allLabs}" var="i" id="Labtable">
+    <apex:column value="{!i.Name}"/>
+    <apex:column value="{!i.Patient__c}"/>
+    <apex:column value="{!i.Doctor__c}"/>
+    
+    
+    </apex:pageBlockTable>
+</apex:pageblock>
+</apex:page>

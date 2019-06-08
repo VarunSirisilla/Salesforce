@@ -1,0 +1,102 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,lightning:isUrlAddressable,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:hassobjectname,force:lightningQuickAction" access="global" controller="PatientListPraciseController" >
+    <aura:attribute name="DoctorList" type="Doctor__c[]"/>
+    <lightning:overlayLibrary aura:id="overLayLib"/>
+        <aura:attribute name="Doctorrecordid" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}"/>
+    
+    
+    <lightning:navigation aura:id="navigation"/>
+
+   
+    
+    <div class="slds-p-around_small">
+        <div class="slds-wrap slds-gutters">
+            <lightning:card  title="Doctors" footer="" iconName="action:new_person_account">
+                <div class="slds-p-around_small">
+                <lightning:input
+                                 aura:id="DoctorSearch"
+                                 name="DoctorSearch"
+                                 label="DoctorSearch"
+                                 type="search"/><br/>
+                </div>
+                                    <lightning:button label="Sort by Name" variant="Brand" onclick="{!c.Sort}"/>
+
+                <aura:set attribute="actions">
+                    
+                    <lightning:button label="New" variant="Brand" onclick="{!c.navigateToMyComponent}"/>
+                    
+                    <lightning:button label="NewModal" variant="Brand" onclick="{!c.navigateToMyModal}"/>
+                 
+                </aura:set>
+                <table id="myTable" class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <thead aria-sort="ascending">
+                        <tr class="slds-line-height_reset">
+                         
+                            <th class="slds-p-around_xx-small" scope="col">
+                                <div class="slds-truncate" title="Patient Name">Doctor Name</div>
+                            </th>
+                            <th class="slds-p-around_xx-small" scope="col">
+                                <div class="slds-truncate" title="PatientAge">Department</div>
+                            </th>
+                            <th class="slds-p-around_xx-small" scope="col">
+                                <div class="slds-truncate" title="Disease">Patient Count</div>
+                            </th>
+                            
+                            <th class="slds-p-around_xx-small" scope="col">
+                                <div class="slds-truncate" title="RecordID">RecordID</div>
+                            </th>
+                               <th class="slds-p-around_xx-small" scope="col">
+                                <div class="slds-truncate" title="ViewDetails"><b>Actions</b></div>
+                            </th>
+                            
+                            <th class="slds-p-around_xx-small" scope="col" style="width:3.25rem">
+                                <div class="slds-truncate slds-assistive-text" title="Actions">Actions</div>
+                            </th>
+                            
+                        </tr>
+                    </thead>
+                    <aura:iteration items="{!v.DoctorList}" var="Doc">
+                        
+                        <tbody>
+                            <tr class="slds-hint-parent">
+                              
+                                <th data-label="DoctorName" aria-sort="ascending" scope="row">
+                                    <div class="slds-truncate" title="Cloudhub">
+                                        <a href="javascript:void(0);" tabindex="-1">{!Doc.Name}</a>
+                                    </div>
+                                </th>
+                                <td data-label="Department">
+                                    <div class="slds-truncate" title="Cloudhub">{!Doc.Department__c}</div>
+                                </td>
+                                <td data-label="Patient count">
+                                    <div class="slds-truncate" title="Cloudhub">{!Doc.Patient_count__c}</div>
+                                </td>
+                                <td data-label="RecordID">
+                                    <div class="slds-truncate" title="Cloudhub">{!Doc.Id}</div>
+                                </td>
+                                
+                                  <th data-label="ViewDetails" scope="row">
+                                    <div class="slds-truncate" title="Cloudhub">
+                                        <a href="javascript:void(0);" tabindex="-1">
+                                            <lightning:button name="{!Doc.Id}" variant="Brand" label="ViewDetails" onclick="{!c.ViewDetails}"/>
+                                            <lightning:button name="{!Doc.Id}" variant="Success" label="ViewDetails2" onclick="{!c.ViewDetails2}"/>
+                                        </a>
+                                    </div>
+                                </th>
+                                
+                            </tr>
+                            
+                        </tbody>
+                        
+                        
+                    </aura:iteration>
+                </table>
+               <!-- <c:PatientDetailPage Patientrid="{!v.Patientrecordid}"/>-->
+            </lightning:card>
+        </div>
+    </div>
+    
+    
+    
+    
+</aura:component>

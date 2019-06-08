@@ -1,0 +1,56 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="mylabel" type="string" default="push"/>
+    <aura:attribute name="mylabel1" type="string" default="pull"/>
+    <aura:attribute name="Varun" type="string" default="Varun"/>
+       <aura:attribute name="Tarun" type="string" default="Tarun"/>
+           <aura:attribute name="New" type="string" default="New"/>
+     <aura:attribute name="HideorDisplayButton" type="boolean" default="true"/>
+    <aura:attribute name="EvenorOdd" type="integer" default="3"/>
+    <aura:attribute name="DoctorDesignation" type="String[]" default="Heartspecialist,ENT,Dentist,eye"/>
+    <lightning:button label="{!v.mylabel1}" variant ="brand" onclick="{!c.mypullButtonAction}"/>    
+    <lightning:button label="{!v.mylabel}" title="Neutral action" onclick="{!c.myPushButtonAction}"/>
+      <lightning:button label="Push Event" title="Neutral action" variant="brand" onclick="{!c.myPushButtonAction}"/>
+    <lightning:button label="{!v.Varun}" variant="brand" onclick ="{!c.myVarunButtonAction}"/>
+       <lightning:button label="{!v.Tarun}" variant="brand" onclick ="{!c.myTarunButtonAction}"/>
+    <aura:if isTrue="{!v.HideorDisplayButton}">
+        <lightning:button label="{!v.mylabel}" title="Neutral action" onclick="{! c.handleClick }"/>
+    <aura:set attribute="else">
+      <h1>Button cannot be displayed because default value is set to false in attribute</h1>
+    </aura:set>
+  </aura:if> 
+      <aura:if isTrue="{!v.EvenorOdd%2==0}">
+        <lightning:button label="{!v.mylabel}" title="Neutral action" onclick="{! c.handleClick }"/>
+    <aura:set attribute="else">
+    <lightning:button label="{!v.mylabel1}" variant ="brand"/>    
+    </aura:set>
+  </aura:if> 
+
+<h1>{!v.New}</h1>
+    <br></br>
+    <br></br>
+    <aura:attribute name ="OnandoffButton" type="String" default="ON"/>
+    <lightning:button label="{!v.OnandoffButton}" variant="brand" title="Neutral action" onclick="{!c.ToggglingOnandOffButton}"/>
+    <br></br>
+    <br></br>
+    <aura:attribute name = "Incremental" type="String" default="increase"/>
+    <aura:attribute name = "Decremental" type="String" default="decrease"/>
+    <aura:attribute name = "MyNumber" type="Integer" default="10"/>
+    <h1>{!v.MyNumber}</h1><br></br>
+    <lightning:button label="{!v.Incremental}" variant="brand" title="Neutral action" onclick="{!c.IncrementalAction}"/>
+    <lightning:button label="{!v.Decremental}" variant="brand" onclick="{!c.DecrementalAction}"/>
+     <lightning:select name="select1" label="How many tickets?" required="true">
+        <option value="">choose one...</option>
+        <option value="1">one</option>
+        <option value="2">two</option>
+        <option value="3">three</option>
+     <option value="4">Four</option>
+    </lightning:select>
+<Lightning:select name="DoctorDesignaton" aura:id="Designation" label="DoctorDesignaton" required="true" onchange="{!c.ComboBoxController}">
+          <option value="" text="SelectDoctorDesignation"/>
+ <aura:iteration items="{!v.DoctorDesignation}" var="item">
+     <option value="{!item}" text="{!item}"/>
+    </aura:iteration>
+    </Lightning:select>
+    <lightning:button label="select Heartspecialist" title="Neutral action" onclick="{! c.SelectHeartspecialist }"/>
+
+</aura:component>

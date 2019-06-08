@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="DoctorDesignation" type="String[]" default=""/>
+<Lightning:select name="DoctorDesignaton" aura:id="Designation" label="DoctorDesignaton" required="true" onchange="{!c.ComboBoxController}">
+          <option value="" text="SelectDoctorDesignation"/>
+ <aura:iteration items="{!v.DoctorDesignation}" var="item">
+     <option value="{!item}" text="{!item}"/>
+    </aura:iteration>
+</Lightning:select>
+</aura:component>

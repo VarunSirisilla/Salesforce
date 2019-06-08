@@ -1,0 +1,52 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="AccountNumber" type="String"/>
+    
+    <aura:attribute name="CList" type="Customer__c[]"/>
+    <div class="ex3"> 
+        <b>Craftship Bus</b>
+    </div>
+    <div class="ex2">
+        <br/>
+        <lightning:select name="FromCities" label="From" required="true">
+            <option value="">choose one...</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Banglore">Banglore</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Vishakapatnam">Vishakapatnam</option>
+        </lightning:select>
+        
+        
+        <lightning:select name="FromCities" label="To" required="true">
+            <option value="">choose one...</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Banglore">Banglore</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Vishakapatnam">Vishakapatnam</option>
+        </lightning:select>
+        <b>Select your seats</b><br/>
+        <lightning:button  variant="Brand" label="1" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" />
+        <lightning:button  variant="Brand" label="2" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" />&nbsp;&nbsp;&nbsp;
+        <lightning:button  variant="Brand" label="3" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" />
+        <lightning:button  variant="Brand" label="4" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" /><br/>
+        <lightning:button  variant="Brand" label="5" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" />
+        <lightning:button  variant="Brand" label="6" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" />&nbsp;&nbsp;&nbsp;
+        <lightning:button  variant="Brand" label="7" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" />
+        <lightning:button  variant="Brand" label="8" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" /><br/>
+        <lightning:button  variant="Brand" label="9" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" />
+        <lightning:button  variant="Brand" label="10" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" />&nbsp;&nbsp;&nbsp;
+        <lightning:button  variant="Brand" label="11" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" />
+        <lightning:button  variant="Brand" label="12" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" /><br/>
+        <lightning:button  variant="Brand" label="13" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" />
+        <lightning:button  variant="Brand" label="14" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" />&nbsp;&nbsp;&nbsp;
+        <lightning:button  variant="Brand" label="15" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" />
+        <lightning:button  variant="Brand" label="16" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" /><br/>
+        <lightning:button  variant="Brand" label="16" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" />
+        <lightning:button  variant="Brand" label="17" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" />&nbsp;&nbsp;&nbsp;
+        <lightning:button  variant="Brand" label="18" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" />
+        <lightning:button  variant="Brand" label="19" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" /><br/>
+        <lightning:button  variant="Brand" label="20" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" />
+        <lightning:button  variant="Brand" label="21" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" />&nbsp;&nbsp;&nbsp;
+        <lightning:button  variant="Brand" label="22" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" />
+        <lightning:button  variant="Brand" label="23" class="slds-m-top_medium" onclick="{!c.MakeTransaction}" /><br/>
+    </div>
+</aura:component>

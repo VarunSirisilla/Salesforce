@@ -1,0 +1,37 @@
+<apex:page controller="PatientObjectController" showHeader="false" sidebar="false" >
+    <style>
+     div.ex1 {
+  width:1300px;
+     height:80px;
+  margin: auto;
+  border: 3px solid #73AD21;
+  color: Skyblue;
+ background-color:white;
+      font-size: 50px;
+      font-family: "Times New Roman", Times, serif;
+     font-weight:    bold;
+     text-align:center
+}
+         
+body {background-color: skyblue;}
+
+        
+
+</style>
+    <div class="ex1">CraftShip Hospitals</div>
+
+<apex:pageBlock title="Patients" >
+
+    
+
+    <apex:pageBlockTable value="{!mypatientTable}" var="i">
+        <apex:column value="{!i.Name}"/>
+        <apex:column value="{!i.Gender__c}"/>
+        <apex:column value="{!i.Disease__c}"/>
+        <apex:column value="{!i.Age__c}"/>
+        <apex:column value="{!i.Phone__c}"/>
+        <apex:column value="{!i.Doctor__c}"/>  
+        </apex:pageBlockTable>
+    <br/>
+    </apex:pageBlock>
+</apex:page>
